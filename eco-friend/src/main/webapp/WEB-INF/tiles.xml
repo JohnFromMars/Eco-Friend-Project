@@ -11,4 +11,8 @@
 	<definition name="app.about" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/about.jsp" />
 	</definition>
+	
+	<definition name="app.login" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp" />
+	</definition>
 </tiles-definitions>
