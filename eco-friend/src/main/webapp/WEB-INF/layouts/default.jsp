@@ -31,16 +31,9 @@
 				<li class="active"><a href="/">Home</a></li>
 				<li><a href="/about">About Eco Friend</a></li>
 
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-
-				<sec:authorize access="!isAuthenticated()">
-					<li><a href="/login">Login</a></li>
-					<li><a href="/register">Register</a></li>
-				</sec:authorize>
-
 				<sec:authorize access="hasRole('ROLE_SENDER')">
-					<li><a href="/login">Sender Menu</a></li>
+					<li><a href="/update_sender">Update</a></li>
+					<li><a href="/find_order">Find</a></li>
 				</sec:authorize>
 
 				<sec:authorize access="hasRole('ROLE_PROVIDER')">
@@ -48,7 +41,16 @@
 				</sec:authorize>
 
 				<sec:authorize access="hasRole('ROLE_DEPOT')">
-					<li><a href="/login">Recycle Depot Menu</a></li>
+					<li><a href="/login">DEPOT</a></li>
+				</sec:authorize>
+
+
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+
+				<sec:authorize access="!isAuthenticated()">
+					<li><a href="/login">Login</a></li>
+					<li><a href="/register">Register</a></li>
 				</sec:authorize>
 
 				<sec:authorize access="isAuthenticated()">

@@ -40,8 +40,27 @@ public class AuthController {
 		modelAndView.setViewName("app.register");
 
 		if (!result.hasErrors()) {
+			
 			siteUserService.register(user);
-			modelAndView.setViewName("redirect:/");
+
+			switch (user.getRole()) {
+			case ROLE_DEPOT:
+				modelAndView.setViewName("redirect:/register_depot");
+				break;
+
+			case ROLE_SENDER:
+				modelAndView.setViewName("redirect:/");
+				break;
+
+			case ROLE_PROVIDER:
+				modelAndView.setViewName("redirect:/");
+				break;
+
+			default:
+				modelAndView.setViewName("redirect:/");
+				break;
+			}
+
 		}
 
 		return modelAndView;

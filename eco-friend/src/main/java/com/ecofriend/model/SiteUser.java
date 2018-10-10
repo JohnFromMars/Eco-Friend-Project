@@ -15,7 +15,7 @@ import com.ecofriend.enums.Role;
 public class SiteUser {
 
 	@Id
-	@Column(name = "userId")
+	@Column(name = "user_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long userId;
 

@@ -39,10 +39,15 @@ public class SiteUserService implements UserDetailsService {
 			return null;
 		}
 
-		List<GrantedAuthority> authorities = AuthorityUtils.commaSeparatedStringToAuthorityList(user.getRole().toString());
+		List<GrantedAuthority> authorities = AuthorityUtils
+				.commaSeparatedStringToAuthorityList(user.getRole().toString());
 		String password = user.getPassword();
 
 		return new User(email, password, authorities);
+	}
+
+	public SiteUser findUserByEmail(String email) {
+		return siteUserDao.findByEmail(email);
 	}
 
 }

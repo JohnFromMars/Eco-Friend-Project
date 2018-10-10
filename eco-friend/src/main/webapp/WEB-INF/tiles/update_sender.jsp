@@ -10,7 +10,7 @@
 	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
 		<div class="login-error">
-			<form:errors path="user.*" />
+			<form:errors path="sender.*" />
 		</div>
 
 		<div class="panel panel-default">
@@ -22,7 +22,7 @@
 			</div>
 
 			<div class="panel-body">
-				<form:form method="post" modelAttribute="user" class="login-form">
+				<form:form method="post" modelAttribute="sender" class="login-form">
 
 					<div class="input-group register-input">
 
@@ -31,19 +31,19 @@
 					</div>
 
 					<div>
-						<form:input path="email" type="text" class="form-control" placeholder="Email" required="required" />
+						<form:input path="licensNumber" type="text" class="form-control" placeholder="Licens Number" required="required" />
 					</div>
 
 					<div>
-						<form:input path="plainPassword" type="password" class="form-control" placeholder="Password" required="required" />
+						<form:input path="firstName" type="text" class="form-control" placeholder="First Name" required="required" />
 					</div>
 
 					<div>
-						<form:input path="repeatPassword" type="password" id="repeatPassword" class="form-control" placeholder="Repeat Password" required="required" />
+						<form:input path="lastName" type="text"  class="form-control" placeholder="Last Name" required="required" />
 					</div>
 
 					<div>
-						<form:input path="role" type="text" class="form-control" placeholder="Role" required="required" />
+						<form:input path="taxNumber" type="text" class="form-control" placeholder="Tax Number" required="required" />
 					</div>
 
 
