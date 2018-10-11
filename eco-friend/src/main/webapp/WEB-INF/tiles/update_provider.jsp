@@ -10,7 +10,7 @@
 	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
 		<div class="login-error">
-			<form:errors path="sender.*" />
+			<form:errors path="provider.*" />
 		</div>
 
 		<div class="panel panel-default">
@@ -22,7 +22,7 @@
 			</div>
 
 			<div class="panel-body">
-				<form:form method="post" modelAttribute="sender" class="login-form">
+				<form:form method="post" modelAttribute="provider" class="login-form">
 
 					<div class="input-group register-input">
 
@@ -30,20 +30,17 @@
 
 					</div>
 
-					<div>
-						<form:input path="licensNumber" type="text" class="form-control" placeholder="Licens Number" required="required" />
-					</div>
 
 					<div>
 						<form:input path="firstName" type="text" class="form-control" placeholder="First Name" required="required" />
 					</div>
 
 					<div>
-						<form:input path="lastName" type="text"  class="form-control" placeholder="Last Name" required="required" />
+						<form:input path="lastName" type="text" class="form-control" placeholder="Last Name" required="required" />
 					</div>
 
 					<div>
-						<form:input path="taxNumber" type="text" class="form-control" placeholder="Tax Number" required="required" />
+						<form:input path="address" type="text" class="form-control" placeholder="address" required="required" />
 					</div>
 
 

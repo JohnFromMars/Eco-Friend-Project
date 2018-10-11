@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.ecofriend.enums.Role;
 import com.ecofriend.service.SiteUserService;
 
 @Configuration
@@ -32,8 +31,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/js/*","/css/*","/img/*").permitAll()
 				.antMatchers("/register").permitAll()
 				
+				.antMatchers("/update_provider").hasRole("PROVIDER")
+				.antMatchers("/update_sender").hasRole("SENDER")
 				
-			.anyRequest().authenticated().and()
+			.anyRequest().denyAll().and()
+				
 			
 			.formLogin()
 				.loginPage("/login")

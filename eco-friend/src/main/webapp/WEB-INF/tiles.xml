@@ -7,20 +7,24 @@
 	<definition name="app.home" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp" />
 	</definition>
-	
+
 	<definition name="app.about" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/about.jsp" />
 	</definition>
-	
+
 	<definition name="app.login" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp" />
 	</definition>
-	
+
 	<definition name="app.register" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/register.jsp" />
 	</definition>
-	
+
 	<definition name="app.update_sender" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/update_sender.jsp" />
+	</definition>
+
+	<definition name="app.update_provider" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/update_provider.jsp" />
 	</definition>
 </tiles-definitions>

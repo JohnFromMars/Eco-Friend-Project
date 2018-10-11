@@ -34,10 +34,13 @@
 				<sec:authorize access="hasRole('ROLE_SENDER')">
 					<li><a href="/update_sender">Update</a></li>
 					<li><a href="/find_order">Find</a></li>
+					<li><a href="/sender_order">My Orders</a></li>
 				</sec:authorize>
 
 				<sec:authorize access="hasRole('ROLE_PROVIDER')">
-					<li><a href="/login">Provider Menu</a></li>
+					<li><a href="/update_provider">Update</a></li>
+					<li><a href="/Order">Order</a></li>
+					<li><a href="/provider_order">My Orders</a></li>
 				</sec:authorize>
 
 				<sec:authorize access="hasRole('ROLE_DEPOT')">
