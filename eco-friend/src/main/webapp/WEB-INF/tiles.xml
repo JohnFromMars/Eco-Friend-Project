@@ -27,4 +27,8 @@
 	<definition name="app.update_provider" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/update_provider.jsp" />
 	</definition>
+	
+	<definition name="app.update_depot" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/update_depot.jsp" />
+	</definition>
 </tiles-definitions>

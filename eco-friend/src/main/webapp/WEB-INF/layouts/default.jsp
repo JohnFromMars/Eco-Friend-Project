@@ -39,12 +39,13 @@
 
 				<sec:authorize access="hasRole('ROLE_PROVIDER')">
 					<li><a href="/update_provider">Update</a></li>
-					<li><a href="/Order">Order</a></li>
+					<li><a href="/order">Order</a></li>
 					<li><a href="/provider_order">My Orders</a></li>
 				</sec:authorize>
 
 				<sec:authorize access="hasRole('ROLE_DEPOT')">
-					<li><a href="/login">DEPOT</a></li>
+					<li><a href="/update_depot">Update</a></li>
+					<li><a href="/search_order">Search Order</a></li>
 				</sec:authorize>
 
 

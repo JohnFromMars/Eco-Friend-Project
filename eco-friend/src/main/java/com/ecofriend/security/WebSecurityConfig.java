@@ -33,6 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				
 				.antMatchers("/update_provider").hasRole("PROVIDER")
 				.antMatchers("/update_sender").hasRole("SENDER")
+				.antMatchers("/update_depot").hasRole("DEPOT")
 				
 			.anyRequest().denyAll().and()
 				
