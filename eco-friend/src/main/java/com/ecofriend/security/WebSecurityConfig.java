@@ -31,8 +31,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/js/*","/css/*","/img/*").permitAll()
 				.antMatchers("/register").permitAll()
 				
-				.antMatchers("/update_provider").hasRole("PROVIDER")
+				.antMatchers("/update_provider",
+							 "/order",
+							 "/provider_order").hasRole("PROVIDER")
+				
 				.antMatchers("/update_sender").hasRole("SENDER")
+				
 				.antMatchers("/update_depot").hasRole("DEPOT")
 				
 			.anyRequest().denyAll().and()

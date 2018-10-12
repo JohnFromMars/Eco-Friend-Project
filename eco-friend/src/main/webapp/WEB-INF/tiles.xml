@@ -31,4 +31,12 @@
 	<definition name="app.update_depot" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/update_depot.jsp" />
 	</definition>
+	
+	<definition name="app.order" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/order.jsp" />
+	</definition>
+	
+	<definition name="app.provider_order" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/provider_order.jsp" />
+	</definition>
 </tiles-definitions>
