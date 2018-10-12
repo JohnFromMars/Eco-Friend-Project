@@ -9,8 +9,8 @@
 	<div class="col-md-8 col-md-offset-2">
 
 		<c:forEach var="order" items="${page.content}">
-
-			<c:url var="dropLink" value="/drop_order?id=${order.orderId}" />
+	
+			<c:url var="registerLink" value="/register_incentive?id=${order.orderId}" />
 
 			<div class="panel panel-default">
 
@@ -26,25 +26,18 @@
 					<div>
 						The order location is <a class="btn btn-primary btn-sm">${order.provider.address} </a>
 					</div>
-
-					<c:if test="${ order.sender != NULL && order.confirm == true && order.depot != NULL}">
-						<div>Your Incentive is ${order.senderIncentive} dollar</div>
-					</c:if>
+					
+					<div>
+						The name of sender is ${order.sender.firstName} ${order.sender.lastName}
+					</div>
 
 
 					<div class="edit-link pull-right">
 
-						<c:if test="${ order.sender != NULL && order.confirm == false}">
-							<a class="btn btn-primary btn-sm" onclick="return confirm('Really want to drop the order?')" href="${dropLink}">Drop Order</a>
+						<c:if test="${ order.sender != NULL && order.confirm == true && order.depot == Null}">
+							<a class="btn btn-primary btn-sm" onclick="return confirm('Really want to register the incentive?')" href="${registerLink}">Register Incentive</a>
 						</c:if>
 
-						<c:if test="${ order.sender != NULL && order.confirm == true && order.depot == NULL}">
-							<a class="btn btn-primary btn-sm">Confirmed</a>
-						</c:if>
-
-						<c:if test="${ order.sender != NULL && order.confirm == true && order.depot != NULL}">
-							<a class="btn btn-primary btn-sm">Finish</a>
-						</c:if>
 					</div>
 
 

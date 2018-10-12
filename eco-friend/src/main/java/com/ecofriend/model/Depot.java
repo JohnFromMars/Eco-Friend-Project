@@ -60,4 +60,10 @@ public class Depot {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return "Depot [depotId=" + depotId + ", siteUser=" + siteUser + ", depotName=" + depotName + ", address="
+				+ address + "]";
+	}
+
 }

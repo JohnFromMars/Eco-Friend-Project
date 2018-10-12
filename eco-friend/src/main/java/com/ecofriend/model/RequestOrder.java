@@ -56,6 +56,12 @@ public class RequestOrder {
 	@Column(name = "total_incentive")
 	private double totalIncentive;
 
+	private double providerIncentive;
+
+	private double senderIncentive;
+
+	private double ecoIncentive;
+
 	public long getOrderId() {
 		return orderId;
 	}
@@ -134,6 +140,38 @@ public class RequestOrder {
 
 	public void setTotalIncentive(double totalIncentive) {
 		this.totalIncentive = totalIncentive;
+	}
+
+	public double getProviderIncentive() {
+		return providerIncentive;
+	}
+
+	public void setProviderIncentive(double providerIncentive) {
+		this.providerIncentive = providerIncentive;
+	}
+
+	public double getSenderIncentive() {
+		return senderIncentive;
+	}
+
+	public void setSenderIncentive(double senderIncentive) {
+		this.senderIncentive = senderIncentive;
+	}
+
+	public double getEcoIncentive() {
+		return ecoIncentive;
+	}
+
+	public void setEcoIncentive(double ecoIncentive) {
+		this.ecoIncentive = ecoIncentive;
+	}
+
+	@Override
+	public String toString() {
+		return "RequestOrder [orderId=" + orderId + ", provider=" + provider + ", sender=" + sender + ", depot=" + depot
+				+ ", added=" + added + ", weight=" + weight + ", confirm=" + confirm + ", validContainerNo="
+				+ validContainerNo + ", totalContainerNo=" + totalContainerNo + ", totalIncentive=" + totalIncentive
+				+ "]";
 	}
 
 }

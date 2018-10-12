@@ -84,4 +84,10 @@ public class Sender {
 		this.taxNumber = taxNumber;
 	}
 
+	@Override
+	public String toString() {
+		return "Sender [senderId=" + senderId + ", user=" + user + ", licensNumber=" + licensNumber + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", taxNumber=" + taxNumber + "]";
+	}
+
 }

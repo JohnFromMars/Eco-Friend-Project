@@ -27,24 +27,36 @@
 	<definition name="app.update_provider" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/update_provider.jsp" />
 	</definition>
-	
+
 	<definition name="app.update_depot" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/update_depot.jsp" />
 	</definition>
-	
+
 	<definition name="app.order" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/order.jsp" />
 	</definition>
-	
+
 	<definition name="app.provider_order" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/provider_order.jsp" />
 	</definition>
-	
+
 	<definition name="app.sender_order" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/sender_order.jsp" />
 	</definition>
-	
-		<definition name="app.find_order" template="/WEB-INF/layouts/default.jsp">
+
+	<definition name="app.find_order" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/find_order.jsp" />
+	</definition>
+	
+	<definition name="app.search_order" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/search_order.jsp" />
+	</definition>
+	
+	<definition name="app.search_result" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/search_result.jsp" />
+	</definition>
+	
+	<definition name="app.register_incentive" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/register_incentive.jsp" />
 	</definition>
 </tiles-definitions>

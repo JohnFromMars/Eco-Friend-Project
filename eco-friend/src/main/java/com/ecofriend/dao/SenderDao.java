@@ -7,4 +7,6 @@ import com.ecofriend.model.SiteUser;
 
 public interface SenderDao extends CrudRepository<Sender, Long> {
 	Sender findByUser(SiteUser user);
+
+	Sender findByLicensNumber(String licenseNo);
 }

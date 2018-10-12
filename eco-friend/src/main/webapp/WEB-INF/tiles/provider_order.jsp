@@ -28,7 +28,13 @@
 					<div>The weight of this order is about ${order.weight} kg</div>
 					<c:if test="${ order.sender != NULL}">
 						<div>
-							Your Sender is   <a class="btn btn-primary btn-sm">${order.sender.firstName} ${order.sender.lastName}</a>
+							Your Sender is <a class="btn btn-primary btn-sm">${order.sender.firstName} ${order.sender.lastName}</a>
+						</div>
+					</c:if>
+
+					<c:if test="${ order.sender != NULL && order.confirm == true && order.depot != NULL}">
+						<div>
+							Your Incentive is ${order.providerIncentive} dollar
 						</div>
 					</c:if>
 
@@ -42,9 +48,13 @@
 						<c:if test="${ order.sender != NULL && order.confirm == false}">
 							<a class="btn btn-primary btn-sm" onclick="return confirm('Really want to confirm?')" href="${confirmLink}">Confirm</a>
 						</c:if>
-						
-						<c:if test="${ order.sender != NULL && order.confirm == true}">
-							<a class="btn btn-primary btn-sm" >Confirmed</a>
+
+						<c:if test="${ order.sender != NULL && order.confirm == true && order.depot == NULL}">
+							<a class="btn btn-primary btn-sm">Confirmed</a>
+						</c:if>
+
+						<c:if test="${ order.sender != NULL && order.confirm == true && order.depot != NULL}">
+							<a class="btn btn-primary btn-sm">Finish</a>
 						</c:if>
 
 					</div>

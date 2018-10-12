@@ -45,7 +45,7 @@ public class AuthController {
 
 			switch (user.getRole()) {
 			case ROLE_DEPOT:
-				modelAndView.setViewName("redirect:/register_depot");
+				modelAndView.setViewName("redirect:/");
 				break;
 
 			case ROLE_SENDER:

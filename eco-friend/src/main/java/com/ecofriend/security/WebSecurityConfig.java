@@ -41,7 +41,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 							 "/find_order",
 							 "/pick_order").hasRole("SENDER")
 				
-				.antMatchers("/update_depot").hasRole("DEPOT")
+				.antMatchers("/update_depot",
+							 "/search_order",
+							 "/search_result",
+							 "/register_incentive").hasRole("DEPOT")
 				
 			.anyRequest().denyAll().and()
 				

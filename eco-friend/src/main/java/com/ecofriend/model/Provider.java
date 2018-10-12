@@ -71,4 +71,10 @@ public class Provider {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return "Provider [providerId=" + providerId + ", siteUser=" + siteUser + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", address=" + address + "]";
+	}
+
 }
