@@ -6,9 +6,12 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.ecofriend.model.Provider;
 import com.ecofriend.model.RequestOrder;
+import com.ecofriend.model.Sender;
 
 public interface RequestOrderDao extends PagingAndSortingRepository<RequestOrder, Long> {
 
 	Page<RequestOrder> findAllByProvider(Pageable pageable, Provider provider);
+
+	Page<RequestOrder> findAllBySender(Pageable pageable, Sender sender);
 
 }

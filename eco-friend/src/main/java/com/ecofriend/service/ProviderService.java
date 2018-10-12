@@ -52,12 +52,27 @@ public class ProviderService {
 		SiteUser siteUser = siteUserDao.findByEmail(email);
 		Provider provider = providerDao.findBySiteUser(siteUser);
 
-		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE, new Sort(
-			    new Order(Direction.DESC, "added"), 
-			    new Order(Direction.ASC, "confirm")));
-		
+		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE,
+				new Sort(new Order(Direction.DESC, "added"), new Order(Direction.ASC, "confirm")));
+
 		// return orderDao.findAll(request);
 		return orderDao.findAllByProvider(request, provider);
+	}
+
+	/**
+	 * confrim order
+	 * 
+	 * @param orderId
+	 */
+	public void confirmOrder(long orderId) {
+		// TODO Auto-generated method stub
+		RequestOrder order = orderDao.findOne(orderId);
+
+		if (order.getSender() != null) {
+			order.setConfirm(true);
+		}
+
+		orderDao.save(order);
 	}
 
 }

@@ -39,4 +39,8 @@
 	<definition name="app.provider_order" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="content" value="/WEB-INF/tiles/provider_order.jsp" />
 	</definition>
+	
+	<definition name="app.sender_order" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="content" value="/WEB-INF/tiles/sender_order.jsp" />
+	</definition>
 </tiles-definitions>

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ecofriend.model.RequestOrder;
 import com.ecofriend.model.Provider;
+import com.ecofriend.model.RequestOrder;
 import com.ecofriend.model.SiteUser;
 import com.ecofriend.service.ProviderService;
 import com.ecofriend.service.SiteUserService;
@@ -109,13 +109,26 @@ public class ProviderController {
 	@RequestMapping(value = "/provider_order", method = RequestMethod.GET)
 	public ModelAndView viewOrder(ModelAndView modelAndView,
 			@RequestParam(name = "p", defaultValue = "1") int pageNumber) {
-		
+
 		String email = getUserName();
 		Page<RequestOrder> page = providerService.getOrderPage(pageNumber, email);
 
 		modelAndView.getModel().put("page", page);
 		modelAndView.setViewName("app.provider_order");
 
+		return modelAndView;
+	}
+
+	/**
+	 * confirm the order after seeing the sender
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/confirm_order", method = RequestMethod.GET)
+	public ModelAndView confirmOrder(ModelAndView modelAndView, @RequestParam(name = "id") long orderId) {
+		
+		providerService.confirmOrder(orderId);
+		modelAndView.setViewName("redirect:/provider_order");
 		return modelAndView;
 	}
 

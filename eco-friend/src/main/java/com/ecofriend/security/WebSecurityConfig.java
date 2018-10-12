@@ -33,9 +33,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				
 				.antMatchers("/update_provider",
 							 "/order",
-							 "/provider_order").hasRole("PROVIDER")
+							 "/provider_order",
+							 "/confirm_order").hasRole("PROVIDER")
 				
-				.antMatchers("/update_sender").hasRole("SENDER")
+				.antMatchers("/update_sender",
+							 "/sender_order").hasRole("SENDER")
 				
 				.antMatchers("/update_depot").hasRole("DEPOT")
 				
