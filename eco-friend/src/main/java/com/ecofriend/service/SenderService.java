@@ -48,4 +48,29 @@ public class SenderService {
 
 		return requestOrderDao.findAllBySender(request, sender);
 	}
+
+	public Page<RequestOrder> findOrder(int pageNumber) {
+		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE, new Sort(new Order(Direction.ASC, "added")));
+
+		// find the order with no sender
+		return requestOrderDao.findAllBySender(request, null);
+	}
+
+	/**
+	 * set the sender of order to user
+	 * 
+	 * @param email
+	 * @param orderId
+	 */
+	public void pickOrder(String email, long orderId) {
+		SiteUser user = siteUserDao.findByEmail(email);
+		Sender sender = senderDao.findByUser(user);
+		RequestOrder order = requestOrderDao.findOne(orderId);
+
+		if (order.getSender() == null) {
+			order.setSender(sender);
+		}
+
+		requestOrderDao.save(order);
+	}
 }

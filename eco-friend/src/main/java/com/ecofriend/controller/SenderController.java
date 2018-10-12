@@ -61,21 +61,56 @@ public class SenderController {
 		return modelAndView;
 	}
 
+	/**
+	 * view the order that sender has taken
+	 * 
+	 * @param modelAndView
+	 * @param pageNumber
+	 * @return
+	 */
 	@RequestMapping(value = "/sender_order", method = RequestMethod.GET)
 	public ModelAndView viewOrder(ModelAndView modelAndView,
 			@RequestParam(name = "p", defaultValue = "1") int pageNumber) {
 
 		String email = getUserName();
-
 		Page<RequestOrder> page = senderService.viewOrder(pageNumber, email);
-
-		System.out.println("================");
-		System.out.println(page.getNumberOfElements());
-		System.out.println("================");
 
 		modelAndView.getModel().put("page", page);
 		modelAndView.setViewName("app.sender_order");
 
+		return modelAndView;
+	}
+
+	/**
+	 * view the order that sender has not taken
+	 * 
+	 * @param modelAndView
+	 * @return
+	 */
+	@RequestMapping(value = "/find_order", method = RequestMethod.GET)
+	public ModelAndView findOrder(ModelAndView modelAndView,
+			@RequestParam(name = "p", defaultValue = "1") int pageNumber) {
+
+		Page<RequestOrder> page = senderService.findOrder(pageNumber);
+		modelAndView.getModel().put("page", page);
+		modelAndView.setViewName("app.find_order");
+		return modelAndView;
+	}
+
+	/**
+	 * sender pick the order to collect
+	 * 
+	 * @param modelAndView
+	 * @param orderId
+	 * @return
+	 */
+	@RequestMapping(value = "/pick_order", method = RequestMethod.GET)
+	public ModelAndView pickOrder(ModelAndView modelAndView, @RequestParam(name = "id") long orderId) {
+		String email = getUserName();
+		
+		senderService.pickOrder(email,orderId);
+		modelAndView.setViewName("redirect:/find_order");
+		
 		return modelAndView;
 	}
 
