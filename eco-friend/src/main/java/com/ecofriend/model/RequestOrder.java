@@ -1,5 +1,6 @@
 package com.ecofriend.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -42,25 +43,25 @@ public class RequestOrder {
 	private Date added;
 
 	@Column(name = "weight")
-	private int weight;
+	private Integer weight;
 
 	@Column(name = "confrim")
 	private boolean confirm = false;
 
 	@Column(name = "valid_container_number")
-	private int validContainerNo;
+	private Integer validContainerNo;
 
 	@Column(name = "total_container_number")
-	private int totalContainerNo;
+	private Integer totalContainerNo;
 
 	@Column(name = "total_incentive")
-	private double totalIncentive;
+	private BigDecimal totalIncentive;
 
-	private double providerIncentive;
+	private BigDecimal providerIncentive;
 
-	private double senderIncentive;
+	private BigDecimal senderIncentive;
 
-	private double ecoIncentive;
+	private BigDecimal ecoIncentive;
 
 	public long getOrderId() {
 		return orderId;
@@ -102,28 +103,12 @@ public class RequestOrder {
 		this.added = added;
 	}
 
-	public int getWeight() {
+	public Integer getWeight() {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
+	public void setWeight(Integer weight) {
 		this.weight = weight;
-	}
-
-	public int getValidContainerNo() {
-		return validContainerNo;
-	}
-
-	public void setValidContainerNo(int validContainerNo) {
-		this.validContainerNo = validContainerNo;
-	}
-
-	public int getTotalContainerNo() {
-		return totalContainerNo;
-	}
-
-	public void setTotalContainerNo(int totalContainerNo) {
-		this.totalContainerNo = totalContainerNo;
 	}
 
 	public boolean isConfirm() {
@@ -134,35 +119,51 @@ public class RequestOrder {
 		this.confirm = confirm;
 	}
 
-	public double getTotalIncentive() {
+	public Integer getValidContainerNo() {
+		return validContainerNo;
+	}
+
+	public void setValidContainerNo(Integer validContainerNo) {
+		this.validContainerNo = validContainerNo;
+	}
+
+	public Integer getTotalContainerNo() {
+		return totalContainerNo;
+	}
+
+	public void setTotalContainerNo(Integer totalContainerNo) {
+		this.totalContainerNo = totalContainerNo;
+	}
+
+	public BigDecimal getTotalIncentive() {
 		return totalIncentive;
 	}
 
-	public void setTotalIncentive(double totalIncentive) {
+	public void setTotalIncentive(BigDecimal totalIncentive) {
 		this.totalIncentive = totalIncentive;
 	}
 
-	public double getProviderIncentive() {
+	public BigDecimal getProviderIncentive() {
 		return providerIncentive;
 	}
 
-	public void setProviderIncentive(double providerIncentive) {
+	public void setProviderIncentive(BigDecimal providerIncentive) {
 		this.providerIncentive = providerIncentive;
 	}
 
-	public double getSenderIncentive() {
+	public BigDecimal getSenderIncentive() {
 		return senderIncentive;
 	}
 
-	public void setSenderIncentive(double senderIncentive) {
+	public void setSenderIncentive(BigDecimal senderIncentive) {
 		this.senderIncentive = senderIncentive;
 	}
 
-	public double getEcoIncentive() {
+	public BigDecimal getEcoIncentive() {
 		return ecoIncentive;
 	}
 
-	public void setEcoIncentive(double ecoIncentive) {
+	public void setEcoIncentive(BigDecimal ecoIncentive) {
 		this.ecoIncentive = ecoIncentive;
 	}
 

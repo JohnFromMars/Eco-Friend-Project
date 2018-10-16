@@ -11,6 +11,7 @@
 		<c:forEach var="order" items="${page.content}">
 
 			<c:url var="dropLink" value="/drop_order?id=${order.orderId}" />
+			<c:url var="mapLink" value="https://www.google.com.au/maps/place/${order.provider.address}" />
 
 			<div class="panel panel-default">
 
@@ -24,7 +25,7 @@
 					<div>The weight of this order is about ${order.weight} kg</div>
 
 					<div>
-						The order location is <a class="btn btn-primary btn-sm">${order.provider.address} </a>
+						The order location is <a href="${mapLink}" target="_blank" class="btn btn-primary btn-sm">${order.provider.address} </a>
 					</div>
 
 					<c:if test="${ order.sender != NULL && order.confirm == true && order.depot != NULL}">

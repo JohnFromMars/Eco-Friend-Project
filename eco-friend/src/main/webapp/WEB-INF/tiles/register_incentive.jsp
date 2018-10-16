@@ -31,15 +31,15 @@
 					</div>
 
 					<div>
-						${order.sender.firstName}<form:input path="totalContainerNo" type="text" class="form-control" placeholder="Total Container Number" required="required" />
+						${order.sender.firstName}<form:input path="totalContainerNo" type="number" class="form-control" placeholder="Total Container Number" required="required" />
 					</div>
 
 					<div>
-						<form:input path="validContainerNo" type="text" class="form-control" placeholder="Talid Container Number" required="required" />
+						<form:input path="validContainerNo" type="number" class="form-control" placeholder="Valid Container Number" required="required" />
 					</div>
 
 					<div>
-						<form:input path="totalIncentive" type="text" id="repeatPassword" class="form-control" placeholder="Total Incentive" required="required" />
+						<form:input path="totalIncentive" type="number" step="0.01" id="repeatPassword" class="form-control" placeholder="Total Incentive" required="required" />
 					</div>
 
 					<div>

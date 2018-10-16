@@ -9,8 +9,9 @@
 	<div class="col-md-8 col-md-offset-2">
 
 		<c:forEach var="order" items="${page.content}">
-	
+
 			<c:url var="pickLink" value="/pick_order?id=${order.orderId}" />
+			<c:url var="mapLink" value="https://www.google.com.au/maps/place/${order.provider.address}" />
 
 			<div class="panel panel-default">
 
@@ -24,7 +25,7 @@
 					<div>The weight of this order is about ${order.weight} kg</div>
 
 					<div>
-						The order location is <a class="btn btn-primary btn-sm">${order.provider.address} </a>
+						The order location is <a href="${mapLink}" target="_blank" class="btn btn-primary btn-sm">${order.provider.address} </a>
 					</div>
 
 

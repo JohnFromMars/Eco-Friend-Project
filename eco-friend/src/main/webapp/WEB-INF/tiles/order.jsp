@@ -31,7 +31,7 @@
 					</div>
 
 					<div>
-						<form:input path="weight" type="text" class="form-control" placeholder="Weight" required="required" />
+						<form:input path="weight" type="text" class="form-control" placeholder="Approximate Weight Kg" required="required" />
 					</div>
 
 

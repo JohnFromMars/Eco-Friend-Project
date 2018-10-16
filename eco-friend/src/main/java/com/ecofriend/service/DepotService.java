@@ -1,5 +1,7 @@
 package com.ecofriend.service;
 
+import java.math.BigDecimal;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,9 +79,9 @@ public class DepotService {
 		oriOrder.setValidContainerNo(order.getValidContainerNo());
 		oriOrder.setTotalIncentive(order.getTotalIncentive());
 		oriOrder.setDepot(depot);
-		oriOrder.setEcoIncentive(order.getTotalIncentive() * 0.1);
-		oriOrder.setSenderIncentive(order.getTotalIncentive() * 0.7);
-		oriOrder.setProviderIncentive(order.getTotalIncentive() * 0.2);
+		oriOrder.setEcoIncentive(order.getTotalIncentive().multiply(new BigDecimal(0.1)));
+		oriOrder.setSenderIncentive(order.getTotalIncentive().multiply(new BigDecimal(0.7)));
+		oriOrder.setProviderIncentive(order.getTotalIncentive().multiply(new BigDecimal(0.2)));
 
 		requestOrderDao.save(oriOrder);
 		System.out.println("====================");
