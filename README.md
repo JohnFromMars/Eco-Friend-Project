@@ -14,6 +14,7 @@ The application requires MySql database configuration.
 Before running the application, please have your MySql database installed on your device and modify the application.properties file which is located under  ./src/main/resources/application.properties  
 
 Modify following properties so it facilitate your database setting  
+
 spring.datasource.url = database Url  
 spring.datasource.username = database username  
 spring.datasource.password = database password  
