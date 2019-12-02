@@ -21,6 +21,12 @@ import com.ecofriend.model.RequestOrder;
 import com.ecofriend.model.Sender;
 import com.ecofriend.model.SiteUser;
 
+/**
+ * Depot service
+ * 
+ * @author user
+ *
+ */
 @Service
 @Transactional
 public class DepotService {
@@ -38,11 +44,22 @@ public class DepotService {
 	@Autowired
 	private SiteUserDao siteUserDao;
 
-	// update depot profile
+	/**
+	 * Update the depot information
+	 * 
+	 * @param depot
+	 */
 	public void updateDepot(Depot depot) {
 		depotDao.save(depot);
 	}
 
+	/**
+	 * Search sender's order based on his/her license number
+	 * 
+	 * @param licenseNo
+	 * @param pageNumber
+	 * @return
+	 */
 	public Page<RequestOrder> searchOrder(String licenseNo, int pageNumber) {
 
 		Sender sender = senderDao.findByLicensNumber(licenseNo);
@@ -50,6 +67,13 @@ public class DepotService {
 		return requestOrderDao.findAllByDepotAndSender(request, null, sender);
 	}
 
+	/**
+	 * return the order that hasn't been completed
+	 * 
+	 * @param orderId
+	 * @return
+	 * @throws Exception
+	 */
 	public RequestOrder preRegisterOrder(long orderId) throws Exception {
 		RequestOrder order = requestOrderDao.findOne(orderId);
 
@@ -60,12 +84,25 @@ public class DepotService {
 		return order;
 	}
 
+	/**
+	 * Save the order
+	 * 
+	 * @param order
+	 */
 	public void postRegisterOrder(RequestOrder order) {
 		requestOrderDao.save(order);
 	}
 
+	/**
+	 * Register the incentive for the request order
+	 * 
+	 * @param order
+	 * @param email
+	 * @param orderId
+	 * @throws Exception
+	 */
 	public void registerIncentive(RequestOrder order, String email, long orderId) throws Exception {
-		
+
 		RequestOrder oriOrder = requestOrderDao.findOne(orderId);
 
 		if (!oriOrder.isConfirm() || oriOrder.getSender() == null || oriOrder.getDepot() != null) {
