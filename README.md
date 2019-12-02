@@ -1,4 +1,4 @@
-# Eco-Friend-Project
+# Eco-Friend Project
 The Eco-Friend project aims to increase the recycling rate by splitting the incentive of recyclable waste.
 In this structure, there are three main roles.
 
