@@ -9,6 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * Depot model
+ * 
+ * @author user
+ *
+ */
 @Entity
 @Table(name = "depot")
 public class Depot {

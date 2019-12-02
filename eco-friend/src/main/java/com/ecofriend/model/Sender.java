@@ -9,12 +9,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
-
+/**
+ * Sender model
+ * 
+ * @author user
+ *
+ */
 @Entity
 @Table(name = "sender")
 public class Sender {
-	
+
 	@Id
 	@Column(name = "senderId")
 	@GeneratedValue(strategy = GenerationType.AUTO)

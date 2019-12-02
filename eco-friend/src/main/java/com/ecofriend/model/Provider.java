@@ -9,6 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * Provider model
+ * 
+ * @author user
+ *
+ */
 @Entity
 @Table(name = "provider")
 public class Provider {

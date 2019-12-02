@@ -10,6 +10,12 @@ import javax.persistence.Transient;
 
 import com.ecofriend.enums.Role;
 
+/**
+ * Site user model
+ * 
+ * @author user
+ *
+ */
 @Entity
 @Table(name = "user")
 public class SiteUser {
