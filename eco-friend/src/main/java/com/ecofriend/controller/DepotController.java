@@ -19,6 +19,12 @@ import com.ecofriend.model.SiteUser;
 import com.ecofriend.service.DepotService;
 import com.ecofriend.service.SiteUserService;
 
+/**
+ * Depot center controller
+ * 
+ * @author user
+ *
+ */
 @Controller
 public class DepotController {
 
@@ -38,7 +44,12 @@ public class DepotController {
 		return authentication.getName();
 	}
 
-	// update get
+	/**
+	 * Update depot page get request
+	 * 
+	 * @param modelAndView
+	 * @return
+	 */
 	@RequestMapping(value = "/update_depot", method = RequestMethod.GET)
 	public ModelAndView updateSender(ModelAndView modelAndView) {
 		Depot depot = new Depot();
@@ -48,7 +59,14 @@ public class DepotController {
 		return modelAndView;
 	}
 
-	// update post save
+	/**
+	 * Update depot post request
+	 * 
+	 * @param modelAndView
+	 * @param depot
+	 * @param result
+	 * @return
+	 */
 	@RequestMapping(value = "/update_depot", method = RequestMethod.POST)
 	public ModelAndView updateSender(ModelAndView modelAndView, @Valid Depot depot, BindingResult result) {
 
@@ -67,7 +85,7 @@ public class DepotController {
 	}
 
 	/**
-	 * get search order page
+	 * get request for search order page
 	 * 
 	 * @param modelAndView
 	 * @return
@@ -79,7 +97,8 @@ public class DepotController {
 	}
 
 	/**
-	 * return result of search
+	 * Find the search result of orders that related to the sender based on
+	 * given driving license number return result of search
 	 * 
 	 * @param modelAndView
 	 * @param licenseNo
@@ -96,6 +115,14 @@ public class DepotController {
 		return modelAndView;
 	}
 
+	/**
+	 * return the register incentive page to the user
+	 * 
+	 * @param modelAndView
+	 * @param orderId
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/register_incentive", method = RequestMethod.GET)
 	public ModelAndView registerIncentive(ModelAndView modelAndView, @RequestParam(name = "id") long orderId)
 			throws Exception {
@@ -108,6 +135,16 @@ public class DepotController {
 		return modelAndView;
 	}
 
+	/**
+	 * Post request to register the incentive for given order
+	 * 
+	 * @param modelAndView
+	 * @param order
+	 * @param result
+	 * @param orderId
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/register_incentive", method = RequestMethod.POST)
 	public ModelAndView registerIncentive(ModelAndView modelAndView, @Valid RequestOrder order, BindingResult result,
 			@RequestParam(name = "id") long orderId) throws Exception {
