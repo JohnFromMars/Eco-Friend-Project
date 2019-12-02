@@ -17,6 +17,12 @@ import com.ecofriend.model.RequestOrder;
 import com.ecofriend.model.Sender;
 import com.ecofriend.model.SiteUser;
 
+/**
+ * Sender service
+ * 
+ * @author user
+ *
+ */
 @Service
 @Transactional
 public class SenderService {
@@ -40,6 +46,13 @@ public class SenderService {
 		senderDao.save(sender);
 	}
 
+	/**
+	 * return a page of orders based on the page number and email
+	 * 
+	 * @param pageNumber
+	 * @param email
+	 * @return
+	 */
 	public Page<RequestOrder> viewOrder(int pageNumber, String email) {
 		SiteUser siteUser = siteUserDao.findByEmail(email);
 		Sender sender = senderDao.findByUser(siteUser);
@@ -49,6 +62,12 @@ public class SenderService {
 		return requestOrderDao.findAllBySender(request, sender);
 	}
 
+	/**
+	 * Return a page of request orders based on the page number
+	 * 
+	 * @param pageNumber
+	 * @return
+	 */
 	public Page<RequestOrder> findOrder(int pageNumber) {
 		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE, new Sort(new Order(Direction.ASC, "added")));
 

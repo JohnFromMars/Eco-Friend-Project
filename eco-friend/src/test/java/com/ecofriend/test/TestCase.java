@@ -12,7 +12,9 @@ import com.ecofriend.App;
 @SpringApplicationConfiguration(App.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestCase {
-	
+	/**
+	test
+	 */
 	@Test
 	public void testDummy(){
 		

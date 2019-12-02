@@ -19,6 +19,12 @@ import com.ecofriend.model.Provider;
 import com.ecofriend.model.RequestOrder;
 import com.ecofriend.model.SiteUser;
 
+/**
+ * Provider service
+ * 
+ * @author user
+ *
+ */
 @Service
 @Transactional
 public class ProviderService {
@@ -34,12 +40,21 @@ public class ProviderService {
 	@Autowired
 	private SiteUserDao siteUserDao;
 
-	// update provider
+	/**
+	 * update provider
+	 * 
+	 * @param provider
+	 */
 	public void updateProvider(Provider provider) {
 		providerDao.save(provider);
 	}
 
-	// make recycle order
+	/**
+	 * Make an order and save it into database
+	 * 
+	 * @param order
+	 * @param email
+	 */
 	public void order(RequestOrder order, String email) {
 		SiteUser siteUser = siteUserDao.findByEmail(email);
 		Provider provider = providerDao.findBySiteUser(siteUser);
@@ -48,6 +63,13 @@ public class ProviderService {
 		orderDao.save(order);
 	}
 
+	/**
+	 * Get a page of request order based on the page number and email
+	 * 
+	 * @param pageNumber
+	 * @param email
+	 * @return
+	 */
 	public Page<RequestOrder> getOrderPage(int pageNumber, String email) {
 		SiteUser siteUser = siteUserDao.findByEmail(email);
 		Provider provider = providerDao.findBySiteUser(siteUser);
@@ -60,7 +82,7 @@ public class ProviderService {
 	}
 
 	/**
-	 * confrim order
+	 * Confirm the order based on the given order id
 	 * 
 	 * @param orderId
 	 */

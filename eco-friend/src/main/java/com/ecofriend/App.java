@@ -9,6 +9,12 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 
+/**
+ * Eco-Friend web application entry
+ * 
+ * @author user
+ *
+ */
 @SpringBootApplication
 public class App {
 
@@ -16,6 +22,11 @@ public class App {
 		SpringApplication.run(App.class, args);
 	}
 
+	/**
+	 * Basic view resolver
+	 * 
+	 * @return
+	 */
 	@Bean
 	public UrlBasedViewResolver tilesViewResolver() {
 		UrlBasedViewResolver urlBasedViewResolver = new UrlBasedViewResolver();
@@ -23,6 +34,11 @@ public class App {
 		return urlBasedViewResolver;
 	}
 
+	/**
+	 * Apache tile setting
+	 * 
+	 * @return
+	 */
 	@Bean
 	public TilesConfigurer TilesConfigurer() {
 		TilesConfigurer tilesConfigurer = new TilesConfigurer();
@@ -30,9 +46,14 @@ public class App {
 		tilesConfigurer.setDefinitions(def);
 		return tilesConfigurer;
 	}
-	
+
+	/**
+	 * Password encoder setting
+	 * 
+	 * @return
+	 */
 	@Bean
-	public PasswordEncoder  gEncoder(){
+	public PasswordEncoder gEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 

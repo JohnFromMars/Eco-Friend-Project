@@ -16,6 +16,12 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+/**
+ * Request Order model
+ * 
+ * @author user
+ *
+ */
 @Entity
 @Table(name = "request_order")
 public class RequestOrder {
