@@ -19,6 +19,12 @@ import com.ecofriend.model.SiteUser;
 import com.ecofriend.service.ProviderService;
 import com.ecofriend.service.SiteUserService;
 
+/**
+ * Provider controller
+ * 
+ * @author user
+ *
+ */
 @Controller
 public class ProviderController {
 
@@ -38,7 +44,12 @@ public class ProviderController {
 		return authentication.getName();
 	}
 
-	// update get
+	/**
+	 * return update provider page to the user
+	 * 
+	 * @param modelAndView
+	 * @return
+	 */
 	@RequestMapping(value = "/update_provider", method = RequestMethod.GET)
 	public ModelAndView updateProvider(ModelAndView modelAndView) {
 		Provider provider = new Provider();
@@ -48,7 +59,14 @@ public class ProviderController {
 		return modelAndView;
 	}
 
-	// update post save
+	/**
+	 * Recive the post data and update the provider information
+	 * 
+	 * @param modelAndView
+	 * @param provider
+	 * @param result
+	 * @return
+	 */
 	@RequestMapping(value = "/update_provider", method = RequestMethod.POST)
 	public ModelAndView updateProvider(ModelAndView modelAndView, @Valid Provider provider, BindingResult result) {
 
@@ -67,7 +85,7 @@ public class ProviderController {
 	}
 
 	/**
-	 * make order page - GET
+	 * make order page - GET return the order page to the user
 	 * 
 	 * @param modelAndView
 	 * @return
@@ -81,7 +99,7 @@ public class ProviderController {
 	}
 
 	/**
-	 * make order page - POST
+	 * make order page - POST receive the order information and save it
 	 * 
 	 * @param modelAndView
 	 * @return
@@ -101,7 +119,7 @@ public class ProviderController {
 	}
 
 	/**
-	 * view order for provider GET
+	 * view orders of provider GET
 	 * 
 	 * @param modelAndView
 	 * @return
@@ -126,7 +144,7 @@ public class ProviderController {
 	 */
 	@RequestMapping(value = "/confirm_order", method = RequestMethod.GET)
 	public ModelAndView confirmOrder(ModelAndView modelAndView, @RequestParam(name = "id") long orderId) {
-		
+
 		providerService.confirmOrder(orderId);
 		modelAndView.setViewName("redirect:/provider_order");
 		return modelAndView;

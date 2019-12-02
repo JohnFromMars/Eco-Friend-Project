@@ -19,6 +19,12 @@ import com.ecofriend.model.SiteUser;
 import com.ecofriend.service.SenderService;
 import com.ecofriend.service.SiteUserService;
 
+/**
+ * Sender controller
+ * 
+ * @author user
+ *
+ */
 @Controller
 public class SenderController {
 
@@ -33,7 +39,12 @@ public class SenderController {
 		return authentication.getName();
 	}
 
-	// update get
+	/**
+	 * return the update sender page to the user
+	 * 
+	 * @param modelAndView
+	 * @return
+	 */
 	@RequestMapping(value = "/update_sender", method = RequestMethod.GET)
 	public ModelAndView updateSender(ModelAndView modelAndView) {
 
@@ -43,7 +54,14 @@ public class SenderController {
 		return modelAndView;
 	}
 
-	// update post save
+	/**
+	 * receive and save the sender information
+	 * 
+	 * @param modelAndView
+	 * @param sender
+	 * @param result
+	 * @return
+	 */
 	@RequestMapping(value = "/update_sender", method = RequestMethod.POST)
 	public ModelAndView updateSender(ModelAndView modelAndView, @Valid Sender sender, BindingResult result) {
 
@@ -62,7 +80,7 @@ public class SenderController {
 	}
 
 	/**
-	 * view the order that sender has taken
+	 * view the order that the sender has taken
 	 * 
 	 * @param modelAndView
 	 * @param pageNumber
@@ -107,10 +125,10 @@ public class SenderController {
 	@RequestMapping(value = "/pick_order", method = RequestMethod.GET)
 	public ModelAndView pickOrder(ModelAndView modelAndView, @RequestParam(name = "id") long orderId) {
 		String email = getUserName();
-		
-		senderService.pickOrder(email,orderId);
+
+		senderService.pickOrder(email, orderId);
 		modelAndView.setViewName("redirect:/find_order");
-		
+
 		return modelAndView;
 	}
 
